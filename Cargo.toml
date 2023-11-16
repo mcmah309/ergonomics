@@ -1,0 +1,21 @@
+[package]
+name = "ergonomics"
+version = "0.1.0"
+edition = "2021"
+description = "A collection of features and crates that making writing Rust more ergonomic"
+repository = "https://github.com/mcmah309/ergonomics"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = { version = "1.0.75", optional = true }
+thiserror = { version = "1.0.50", optional = true }
+to_that = { version = "1.0.1", optional = true }
+apply = { version = "0.3.0", optional = true }
+
+[features]
+default = ["full"]
+full = ["anyhow", "thiserror", "to_that", "apply"]
+chaining = ["to_that", "apply"]
+error_handling = ["anyhow", "thiserror"]
